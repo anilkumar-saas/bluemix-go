@@ -1,6 +1,7 @@
 package functions
 
 import (
+	"fmt"
 	gohttp "net/http"
 
 	bluemix "github.com/IBM-Cloud/bluemix-go"
@@ -26,6 +27,7 @@ type fnService struct {
 
 //New ...
 func New(sess *session.Session) (FunctionServiceAPI, error) {
+	fmt.Println("$$$$$$$$$$$$$$$$$$$$$$$$")
 	config := sess.Config.Copy()
 	err := config.ValidateConfigForService(bluemix.FunctionsService)
 	if err != nil {
